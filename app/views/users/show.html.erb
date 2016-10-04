@@ -1,0 +1,27 @@
+<div class="user-profile">
+  <div class="panel panel-default">
+    <div class="panel-heading"><%= @user.name %></div>
+    <ul class="list-group">
+      <li class="list-group-item"><%= @user.email %></li>
+      <li class="list-group-item"><%= @user.tel %></li>
+      <li class="list-group-item"><%= @user.station %></li>
+      <li class="list-group-item">希望駅：<%= @user.budger %></li>
+      <li class="list-group-item">駅からの距離：<%= @user.walk %></li>
+      <li class="list-group-item">希望専有面積：<%= @user.area %></li>
+      <li class="list-group-item">希望築年数：<%= @user.year_built %></li>
+      <li class="list-group-item">エレベーターの有無：<%= @user.elevator %></li>
+      <li class="list-group-item">エレベーター無しの場合場合の許容階数：<%= @user.floor %></li>
+      <li class="list-group-item">ペット飼育：<%= @user.pet %></li>
+      <li class="list-group-item">購入希望時期：<%= @user.season %></li>
+      <li class="list-group-item">具体的希望：<%= @user.other %></li>
+      <li class="list-group-item">
+      <% if @user.open %>
+        一般公開する
+      <% else %>
+        一般公開しない
+      <% end %></li>
+    </ul>
+  </div>
+  <p><%= link_to "修正する", edit_user_path(@user), class: "btn btn-primary" %>
+    <%= link_to "削除する", user_path(@user), method: :delete, data: {confirm: "削除して宜しいですか？"}, class: "btn btn-primary" %></p>
+</div>

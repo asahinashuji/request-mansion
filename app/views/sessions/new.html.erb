@@ -1,0 +1,23 @@
+<div class="col-md-6 col-md-offset-3">
+<div class="login">
+  <%= form_for(:session, url: login_path) do |f| %>
+  
+    <%= f.label :email, "メールアドレス", class: "left" %>
+    <%= f.email_field :email, class: "form-control short" %>
+    
+    <%= f.label :password, "パスワード", class: "left" %>
+    <%= f.password_field :password, class: "form-control short" %>
+    
+    <%= f.label :password_confirmation, "パスワード再入力", class: "left" %>
+    <%= f.password_field :password_confirmation, class: "form-control short" %>
+    
+    <%= f.label :remember_me, class: "checkbox inline" do %>
+      <span><%= f.check_box :remember_me %>
+      パスワードを保存</span>
+    <% end %>  
+    
+    <%= f.submit "ログイン", class: "btn btn-primary btn-sm" %>
+    
+  <% end %>  
+</div>
+</div>

@@ -1,0 +1,58 @@
+<%= form_for(@user) do |f| %>
+  <%= render partial: 'shared/errors', locals: { model: @user} %>
+
+  <%= f.label :name, "氏名（必須）" %>
+  <%= f.text_field :name, class: "form-control long" %>
+  
+  <%= f.label :email, "メールアドレス（必須）" %>
+  <%= f.email_field :email, class: "form-control long" %>
+  
+  <%= f.label :password, "パスワード（必須　6文字以上）" %>
+  <%= f.password_field :password, class: "form-control long" %>
+  
+  <%= f.label :password_confirmation, "パスワード再入力" %>
+  <%= f.password_field :password_confirmation, class: "form-control long" %>
+  
+  <%= f.label :tel, "電話番号（必須）" %>
+  <%= f.telephone_field :tel, class: "form-control long" %>
+  
+  <%= f.label :station, "希望最寄駅 (複数の場合はスペースで区切って記入してください)" %>
+  <%= f.text_field :station, class: "form-control long" %>
+  
+  <p><%= f.label :budger, "予算" %><br>
+  <%= f.select :budger, ['特に決めていない', 'リフォーム込み1000万円以下', 'リフォーム別1000万円以下', 'リフォーム込み1500万円以下', 'リフォーム別1500万円以下',
+                         'リフォーム込み2000万円以下', 'リフォーム別2000万円以下', 'リフォーム込み2500万円以下', 'リフォーム別2500万円以下', 'リフォーム込み3000万円以下', 
+                         'リフォーム別3000万円以下', '3000万円以上'], {:include_blank => '選択してください'}, class: "long" %></p>
+  
+  <p><%= f.label :walk, "駅からの距離" %><br>
+  <%= f.select :walk, ['徒歩5分以内', '徒歩10分以内', '徒歩15分以内', 'バス便でも可'], {:include_blank => '選択してください'}, class: "long" %></p>
+  
+  <p><%= f.label :area, "希望専有面積" %><br>
+  <%= f.select :area, ['狭くても可', '50㎡以上', '60㎡以上', '70㎡以上'], {:include_blank => '選択してください'}, class: "long" %></p>
+  
+  <p><%= f.label :year_built, "希望築年数" %><br>
+  <%= f.select :year_built, ['築10年以内', '築20年以内', '築30年以内', '築40年以内', '古くても構わない'], {:include_blank => '選択してください'}, class: "long" %></p>
+  
+  <p><%= f.label :elevator, "エレベーターの有無" %><br>
+  <%= f.select :elevator, ['必須', 'あれば良いが必須条件では無い', '無くても良い'], {:include_blank => '選択してください'}, class: "long" %></p>
+  
+  <p><%= f.label :floor, "エレベーター無し物件の場合、何階まで可能" %><br>
+  <%= f.select :floor, ['1階', '2階', '3階', '4階', '5階'], {:include_blank => '選択してください'}, class: "long" %></p>
+  
+  <p><%= f.label :pet, "ペット飼育" %><br>
+  <%= f.select :pet, ['必須', 'どっちでも良い', '飼えないマンションが良い'], {:include_blank => '選択してください'}, class: "long" %></p>
+  
+  <p><%= f.label :season, "購入希望時期" %><br>
+  <%= f.select :season, ['出来るだけ早く', '3ヶ月以内', '半年以内', 'まだ具体的に決まっていない'], {:include_blank => '選択してください'}, class: "long" %></p>
+  
+  <p><%= f.label :other, "具体的希望" %><br>
+  <%= f.text_area :other, class: "area" %></p>
+  
+  <p><%= f.label :open, "一般公開する" %>
+  <%= f.check_box :open %><br>
+  希望条件のみ公開で個人情報は公開されません<br>
+  具体的希望は公開されますので、個人情報を書き込んだ場合は一般公開しないでください</p>
+  
+  <%= f.submit "送信", class: "btn btn-primary" %>
+
+<% end %>
