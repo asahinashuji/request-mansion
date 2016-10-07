@@ -16,6 +16,9 @@
       <li><%= link_to "登録されてるデータを探す", "#" %></li>
       <li><%= link_to "自分の情報ページにログイン", login_path %></li>
       <li><%= link_to "ウイングスタッフログイン", login_path %></li>
+      <% if logged_in? %>
+        <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+      <% end %>  
     </ul>
   </div>
   

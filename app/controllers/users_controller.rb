@@ -18,6 +18,7 @@ class UsersController < ApplicationController
       @user.open == '1' ? 'true' : 'false'
       @user.update_attributes(open: @user.open)
       flash[:succses] = "新規登録しました"
+      log_in @user
       redirect_to @user
     else
       render 'new'
