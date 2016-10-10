@@ -1,0 +1,14 @@
+<%= will_paginate @users %>
+　<table border=1>
+    <tr><th>希望駅</th><th>駅からの距離</th><th>希望面積</th><th>築年数</th><th>エレベーター</th><th>希望階（エレ無し時）</th>
+    <th>ペット飼育</th><th>予算</th><th>購入希望時期</th><th style="width:28%;">具体的希望</th></tr>　
+  <% @users.each do |user| %>
+      <tr><td><%= user.station %></td><td><%= user.walk %></td><td><%= user.area %></td><td><%= user.year_built %></td><td><%= user.elevator %></td><td><%= user.floor %></td>
+      <td><%= user.pet %></td><td><%= user.budger %></td><td><%= user.season %></td><td style="width: 28%;"><%= user.other %>
+        <%= link_to "詳細", user_path(user), class: "btn btn-info btn-sm" %>
+        <% unless user.open %>
+        <span>非公開</span></td></tr>
+        <% end %>
+  <% end %>
+  </table>
+<%= will_paginate @users %>  
