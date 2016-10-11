@@ -1,0 +1,11 @@
+<h1>メールアドレス確認</h1>
+
+<p><%= @user.name %>様</p>
+
+<p>
+マンションリクエストにご登録頂きありがとうございます。以下のリンクをクリックしてアカウントを有効にしてください。
+</p>
+<p>株式会社ウイングコーポレーション</p>
+
+<%= link_to "メールアドレス確認", edit_acount_activation_url(@user.activation_token,
+                                                    email: @user.email) %>

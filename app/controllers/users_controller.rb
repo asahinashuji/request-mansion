@@ -33,9 +33,9 @@ class UsersController < ApplicationController
     if @user.save
       @user.open == '1' ? 'true' : 'false'
       @user.update_attributes(open: @user.open)
-      flash[:succses] = "新規登録しました"
-      log_in @user
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = "ご登録頂いたアドレスにメールを送りましたので認証を行ってください"
+      redirect_to root_url
     else
       render 'new'
     end

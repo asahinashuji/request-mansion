@@ -1,0 +1,7 @@
+<%= @user.name %>様
+
+マンションリクエストにご登録頂きありがとうございます。
+以下のURLにアクセスしてアカウントを有効にしてください。
+株式会社ウイングコーポレーション
+
+<%= edit_acount_activation_url(@user.activation_token, email: @user.email) %>
