@@ -4,10 +4,7 @@ class UsersController < ApplicationController
   
   def top
   end
-  
-  def renovation
-  end
-  
+ 
   def index
     @users = User.where(open: true, activated: true).paginate(page: params[:page], per_page: 20)
   end
