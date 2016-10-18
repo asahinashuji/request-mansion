@@ -13,7 +13,7 @@
       <li class="list-group-item">エレベーター無しの場合場合の許容階数：<%= @user.floor %></li>
       <li class="list-group-item">ペット飼育：<%= @user.pet %></li>
       <li class="list-group-item">購入希望時期：<%= @user.season %></li>
-      <li class="list-group-item">具体的希望：<%= @user.other %></li>
+      <li class="list-group-item">具体的希望：<%= simple_format(@user.other) %></li>
       <li class="list-group-item">
       <% if @user.open %>
         一般公開する

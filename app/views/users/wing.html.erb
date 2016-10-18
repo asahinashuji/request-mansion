@@ -4,7 +4,7 @@
     <th>ペット飼育</th><th>予算</th><th>購入希望時期</th><th style="width:28%;">具体的希望</th></tr>　
   <% @users.each do |user| %>
       <tr><td><%= user.station %></td><td><%= user.walk %></td><td><%= user.area %></td><td><%= user.year_built %></td><td><%= user.elevator %></td><td><%= user.floor %></td>
-      <td><%= user.pet %></td><td><%= user.budger %></td><td><%= user.season %></td><td style="width: 28%;"><%= user.other %>
+      <td><%= user.pet %></td><td><%= user.budger %></td><td><%= user.season %></td><td style="width: 28%;"><%= simple_format(user.other) %>
         <%= link_to "詳細", user_path(user), class: "btn btn-info btn-sm" %>
         <% unless user.open %>
         <span>非公開</span></td></tr>
