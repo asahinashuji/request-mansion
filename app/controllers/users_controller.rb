@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
  
   def index
-    @users = User.where(open: true, activated: true).paginate(page: params[:page], per_page: 20)
+    @users = User.where(open: true, activated: true).paginate(page: params[:page], per_page: 20).order(created_at: :DESC)
   end
   
   def wing
