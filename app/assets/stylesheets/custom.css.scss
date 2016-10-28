@@ -4,11 +4,18 @@
 .container {
   background-color: #E0DBD9;
   font-family: 游ゴシック;
+  height: 100%;
 }
+
+.row {
+  height: 100%;
+}
+
 h1 {
   font-size: 4em;
   font-weight: bold;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 #error_explanation {
@@ -22,9 +29,6 @@ h1 {
   }
 }
 
-h1 {
-  text-align: center;
-}
 
 .new-form {
   margin-left: 30px;
@@ -79,6 +83,7 @@ h1 {
 .top {
   margin-top: 40px;
   margin-left: 30px;
+  margin-right: 15px;
   h3 {
     font-weight: bold;
   }
@@ -99,40 +104,25 @@ footer {
   clear: left;
   margin-top: 20px;
   width: 100%;
-  height: 50px;
+  height: 100%;
   background-color: black;
   color: #fff;
   font-size: 2em;
   font-weight: bold;
   text-align: center;
   line-height: 50px;
+  .col-md-12 {
+    height: 100%;
+    background-color: black;
+  }
 }
+
 
 span {
   color: red;
 }
 
-.reno {
-  margin-left: 20px;
-  h2 {
-    font-weight: bold;
-    color: red;
-    text-align: right;
-    margin-right: 20px;
-  }
-  h3 {
-    font-weight: bold;
-    color: red;
-    margin-top: 30px;
-  }
-   p {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  .pic {
-    margin-left: 10%;
-  }
-}
+
 
 .btn {
   margin-bottom: 30px;
