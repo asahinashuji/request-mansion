@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :mine_user, only: [:show, :edit, :update, :destroy]
+  before_action :mine_user, only: [:edit, :update, :destroy]
+  before_action :wing_user, only: [:wing, :show]
   
   def top
   end
@@ -70,4 +71,11 @@ class UsersController < ApplicationController
        flash[:danger] = "要求されたページへのアクセス権限がありません"
       end
     end
+    
+    def wing_user
+      unless current_user.wing? || admin_user? || current_user == set_user
+        redirect_to root_url
+        flash[:danger] = "要求されたページへのアクセス権限がありません"
+      end
+    end  
 end

@@ -23,7 +23,7 @@
         <li><%= link_to "自分のページを見る", user_path(current_user) %></li>
         <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
       <% end %> 
-      <% if logged_in? && admin_user? %>
+      <% if logged_in? && wing_user? %>
         <li><%= link_to "ウイング用ページ", users_wing_path %></li>
       <% end %>  
     </ul>

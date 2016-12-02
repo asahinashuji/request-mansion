@@ -40,4 +40,8 @@ module SessionsHelper
   def admin_user?
     current_user.admin? if logged_in?
   end
+  
+  def wing_user?
+    current_user.wing? || admin_user? if logged_in?
+  end
 end
