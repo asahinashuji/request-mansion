@@ -23,6 +23,7 @@
     </ul>
   </div>
   <% if @user == current_user || admin_user? %>
+  <P>登録日： <%= "#{@user.created_at.to_s[0..3]}年#{@user.created_at.to_s[5..6]}月#{@user.created_at.to_s[8..9]}日" %></P>
   <p><%= link_to "修正する", edit_user_path(@user), class: "btn btn-primary" %>
     <%= link_to "削除する", user_path(@user), method: :delete, data: {confirm: "削除して宜しいですか？"}, class: "btn btn-primary" %></p>
   <% end %>  
